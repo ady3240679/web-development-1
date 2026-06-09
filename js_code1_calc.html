@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            padding: 20px; 
+        }
+        .box { 
+            border: 1px solid black; 
+            padding: 15px; 
+            width: 300px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Calculator</h3>
+        <input type="number" id="n1" placeholder="First num">
+        <input type="number" id="n2" placeholder="Second num">
+        <br><br>
+        <button onclick="doMath()">Calculate</button>
+        <p id="ans">Result:</p>
+    </div>
+
+    <script>
+        function doMath() {
+            var x = document.getElementById("n1").value;
+            var y = document.getElementById("n2").value;
+            
+            if (x == "" || y == "") {
+                document.getElementById("ans").innerHTML = "Please enter numbers!";
+            } else {
+                var res = x * y;
+                document.getElementById("ans").innerHTML = "Result: " + res;
+            }
+        }
+    </script>
+
+</body>
+</html>
