@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+        }
+
+        .login-container {
+            border: 1px solid gray;
+            background-color: white;
+            width: 320px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        input {
+            display: block;
+            margin-bottom: 10px;
+            width: 90%;
+            padding: 5px;
+        }
+
+        button {
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+
+        #error-message {
+            color: red;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h3>Member Login</h3>
+        
+        <label>Username:</label>
+        <input type="text" id="user">
+
+        <label>Password:</label>
+        <input type="password" id="pass">
+
+        <button onclick="checkLogin()">Submit</button>
+
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            var name = document.getElementById("user").value;
+            var secret = document.getElementById("pass").value;
+
+            if (name == "" || secret == "") {
+                document.getElementById("error-message").innerHTML = "All fields are required!";
+            } 
+            else if (secret.length < 6) {
+                document.getElementById("error-message").innerHTML = "Password must be at least 6 characters!";
+            } 
+            else {
+                document.getElementById("error-message").innerHTML = "Login successful!";
+                document.getElementById("error-message").style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+</html>
