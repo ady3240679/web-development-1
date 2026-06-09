@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show and Hide</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Secret Message</h3>
+        
+        <p id="msg">This is a secret note for the user.</p>
+        
+        <button onclick="hideText()">Hide</button>
+        <button onclick="showText()">Show</button>
+    </div>
+
+    <script>
+        function hideText() {
+            document.getElementById("msg").style.display = "none";
+        }
+
+        function showText() {
+            document.getElementById("msg").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
